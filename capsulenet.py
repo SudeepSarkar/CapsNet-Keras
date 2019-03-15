@@ -107,7 +107,7 @@ def train(model, data, args):
                                batch_size=args.batch_size, histogram_freq=1, 
                                write_graph = False, write_grads = False, write_images = True, 
                                embeddings_freq = 0, embeddings_layer_names = "Null", 
-                               embeddings_metadata = "NULL", embeddings_data = "Null", update_freq = "batch")
+                               embeddings_metadata = "NULL", embeddings_data = "Null", update_freq = "epoch")
        
     checkpoint = callbacks.ModelCheckpoint(args.save_dir + '/weights-{epoch:02d}.h5', monitor='val_capsnet_acc',
                                            save_best_only=True, save_weights_only=True, verbose=1)
