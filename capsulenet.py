@@ -103,7 +103,7 @@ def train(model, data, args):
 
     # callbacks
     log = callbacks.CSVLogger(args.save_dir + '/log.csv')
-    tb = callbacks.TensorBoard(log_dir=args.save_dir + '/tensorboard-logs', 
+    tb = callbacks.TensorBoard(log_dir=args.save_dir, # + '/tensorboard-logs', 
                                batch_size=args.batch_size, histogram_freq=1, 
                                write_graph = False, write_grads = False, write_images = True, 
                                embeddings_freq = 0, embeddings_layer_names = "Null", 
