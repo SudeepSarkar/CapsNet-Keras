@@ -103,8 +103,12 @@ def train(model, data, args):
 
     # callbacks
     log = callbacks.CSVLogger(args.save_dir + '/log.csv')
-    tb = callbacks.TensorBoard(log_dir=args.save_dir + '/tensorboard-logs', update_freq='batch',
-                               batch_size=args.batch_size, histogram_freq=int(args.debug))
+    tb = callbacks.TensorBoard(log_dir=args.save_dir + '/tensorboard-logs', 
+                               batch_size=args.batch_size, histogram_freq=1, 
+                               write_graph = FALSE, write_grads = FALSE, write_images = TRUE, 
+                               embeddings_freq = 0, embeddings_layer_names = NULL, 
+                               embeddings_metadata = NULL, embeddings_data = NULL, update_freq = "batch")
+       
     checkpoint = callbacks.ModelCheckpoint(args.save_dir + '/weights-{epoch:02d}.h5', monitor='val_capsnet_acc',
                                            save_best_only=True, save_weights_only=True, verbose=1)
     lr_decay = callbacks.LearningRateScheduler(schedule=lambda epoch: args.lr * (args.lr_decay ** epoch))
