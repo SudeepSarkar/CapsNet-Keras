@@ -129,7 +129,7 @@ def train(model, data, args):
     def train_generator(x, y, batch_size, shift_fraction=0.):
         #train_datagen = ImageDataGenerator(width_shift_range=shift_fraction,
         #                                   height_shift_range=shift_fraction)  # shift up to 2 pixel for MNIST
-        train_datagen = ImageDataGenerator(rotation_range=90)  
+        train_datagen = ImageDataGenerator(rotation_range=180)  
         generator = train_datagen.flow(x, y, batch_size=batch_size)
         while 1:
             x_batch, y_batch = generator.next()
