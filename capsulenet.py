@@ -172,7 +172,7 @@ def manipulate_latent(model, data, args):
     print('-'*30 + 'Begin: manipulate' + '-'*30)
     x_test, y_test = data
     print (shape(x_test))
-    for index in range(1, np.argmax(y_test, 1)):
+    for index in range(0,10):
            #index = np.argmax(y_test, 1) == args.digit
            number = np.random.randint(low=0, high=sum(index) - 1)
            x, y = x_test[index][number], y_test[index][number]
