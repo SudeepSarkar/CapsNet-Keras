@@ -193,8 +193,8 @@ def manipulate_latent(model, data, args):
            image = img*255
            #Image.fromarray(image.astype(np.uint8)).save(args.save_dir + '/manipulate-%d.png' % args.digit)
            #print('manipulated result saved to %s/manipulate-%d.png' % (args.save_dir, args.digit))
-           Image.fromarray(image.astype(np.uint8)).save(args.save_dir + '/manipulate-%d.png' % index)
-           print('manipulated result saved to %s/manipulate-%d.png' % (args.save_dir, index))
+           Image.fromarray(image.astype(np.uint8)).save(args.save_dir + '/manipulate-%d.png' % objIndex)
+           print('manipulated result saved to %s/manipulate-%d.png' % (args.save_dir, objIndex))
            print('-' * 30 + 'End: manipulate' + '-' * 30)
 
 
