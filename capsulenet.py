@@ -265,6 +265,8 @@ if __name__ == "__main__":
                                                   routings=args.routings)
     model.summary()
 
+    breakpoint()
+       
     # train or test
     if args.weights is not None:  # init the model weights with provided one
         model.load_weights(args.weights)
