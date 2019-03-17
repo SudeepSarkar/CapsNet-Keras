@@ -15,7 +15,7 @@ Result:
     
 Author: Xifeng Guo, E-mail: `guoxifeng1990@163.com`, Github: `https://github.com/XifengGuo/CapsNet-Keras`
 """
-
+import pdb; 
 import numpy as np
 from keras import layers, models, optimizers
 from keras import backend as K
@@ -265,7 +265,7 @@ if __name__ == "__main__":
                                                   routings=args.routings)
     model.summary()
 
-    breakpoint()
+    pdb.set_trace()
        
     # train or test
     if args.weights is not None:  # init the model weights with provided one
